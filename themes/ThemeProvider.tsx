@@ -7,7 +7,7 @@ type themeProps = { dark: boolean; colors: Colors; setScheme: (scheme: string) =
 export const ThemeContext: React.Context<themeProps> = createContext({
 	dark: false,
 	colors: lightColors,
-	setScheme: () => {},
+	setScheme: () => { },
 } as any);
 
 export const ThemeProvider = (props: { children: any }) => {

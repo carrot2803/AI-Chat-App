@@ -22,6 +22,6 @@ export default function ChatHeader() {
 const pos: any = { position: "absolute", top: 0, right: 0, alignItems: "center", justifyContent: "space-between" };
 const f: any = { flexDirection: "row", marginVertical: 30, paddingHorizontal: 22 };
 const s = StyleSheet.create({
-	container: { ...pos, ...f, height: 60, width: SIZES.width, zIndex: 9999 },
+	container: { ...pos, ...f, height: 60, width: SIZES.width, zIndex: 5 },
 	backbtn: { height: 40, width: 40, alignItems: "center", justifyContent: "center", marginLeft: -10 },
 });

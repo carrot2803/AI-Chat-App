@@ -43,7 +43,7 @@ export default function Tabs() {
 				name="Saved"
 				component={Saved}
 				options={{
-					tabBarIcon: ({}) => (
+					tabBarIcon: ({ }) => (
 						<View
 							style={{
 								alignItems: "center",
@@ -69,7 +69,7 @@ export default function Tabs() {
 				options={{
 					tabBarIcon: ({ focused }) => (
 						<Ionicons
-							name="ios-person-outline"
+							name="person-outline"
 							size={24}
 							color={focused ? COLORS.primary : COLORS.secondaryBlack}
 						/>

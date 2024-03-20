@@ -10,14 +10,21 @@ type FormState = [formState: any, dispatchFormState: ({}) => void];
 
 export function useRegister() {
 	const navigation = useNavigation();
-	const [formState, dispatchFormState]: FormState = useReducer<any>(reducer, initialState);
+	const [formState, dispatchFormState]: FormState = useReducer<any>(
+		reducer,
+		initialState
+	);
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState("");
 	const { colors } = useTheme();
 
 	const inputChangedHandler = useCallback(
 		(inputId: string, inputValue: string) =>
-			dispatchFormState({ inputId, validationResult: validateInput(inputId, inputValue), inputValue }),
+			dispatchFormState({
+				inputId,
+				validationResult: validateInput(inputId, inputValue),
+				inputValue,
+			}),
 		[dispatchFormState]
 	);
 
@@ -33,7 +40,11 @@ export function useRegister() {
 			);
 
 			const { uid } = result.user;
-			const userData = await createUser(formState.inputValues.fullName, formState.inputValues.email, uid);
+			const userData = await createUser(
+				formState.inputValues.fullName,
+				formState.inputValues.email,
+				uid
+			);
 
 			if (userData) {
 				setIsLoading(false);
@@ -42,11 +53,16 @@ export function useRegister() {
 		} catch (error: any) {
 			const errorCode = error.code;
 			let message = "Something went wrong !";
-			if (errorCode === "auth/email-already-in-use") message = "This email is already in use";
+			if (errorCode === "auth/email-already-in-use")
+				message = "This email is already in use";
 			setError(message);
 			setIsLoading(false);
 		}
 	};
-	useEffect(() => (error ? Alert.alert("An error occurred", error) : print()), [error]);
+	useEffect(
+		() => (error ? Alert.alert("An error occurred", error) : print()),
+		[error]
+	);
+
 	return { formState, inputChangedHandler, authHandler, isLoading, colors };
 }

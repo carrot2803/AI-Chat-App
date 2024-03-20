@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { KeyboardAvoidingView, Platform, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { GiftedChat } from "react-native-gifted-chat";
 import { useTheme } from "../themes/ThemeProvider";
@@ -14,18 +14,24 @@ export default function Chat() {
 	return (
 		<SafeAreaView style={{ flex: 1, backgroundColor: colors.background }}>
 			<ChatHeader />
-			<View style={{ flex: 1, justifyContent: "center" }}>
-				<GiftedChat
-					messages={messages}
-					// @ts-ignore toolbar error
-					renderInputToolbar={() => {}}
-					user={{ _id: 1 }}
-					minInputToolbarHeight={0}
-					renderMessage={renderMessage}
-					isTyping={isTyping}
-				/>
-			</View>
-			<ChatBox inputMessage={inputMessage} handleInputText={handleInputText} submit={submit} />
+			<KeyboardAvoidingView
+				style={{ flex: 1 }}
+				behavior={Platform.OS === "ios" ? "padding" : undefined}
+				keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 0} // Adjust this offset as needed
+			>
+				<View style={{ flex: 1 }}>
+					<GiftedChat
+						messages={messages}
+						// @ts-ignore toolbar error
+						renderInputToolbar={() => { }}
+						user={{ _id: 1 }}
+						minInputToolbarHeight={0}
+						renderMessage={renderMessage}
+						isTyping={isTyping}
+					/>
+				</View>
+				<ChatBox inputMessage={inputMessage} handleInputText={handleInputText} submit={submit} />
+			</KeyboardAvoidingView>
 		</SafeAreaView>
 	);
 }
