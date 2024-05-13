@@ -56,10 +56,14 @@ Once logged in, you will enter the chat interface, where you can view your conve
 
 ## Snippets
 
+#### Authentication
+
 <img src="assets/screenshots/screenshot1.png" alt="Screenshot 1" width="200">
 <img src="assets/screenshots/screenshot2.png" alt="Screenshot 2" width="200">
 <img src="assets/screenshots/screenshot3.png" alt="Screenshot 3" width="200">
-<br/>
+
+#### Usage
+
 <img src="assets/screenshots/screenshot4.png" alt="Screenshot 4" width="200">
 <img src="assets/screenshots/screenshot5.png" alt="Screenshot 5" width="200">
 <img src="assets/screenshots/screenshot6.png" alt="Screenshot 6" width="200">
