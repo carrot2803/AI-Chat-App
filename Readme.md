@@ -56,9 +56,10 @@ Once logged in, you will enter the chat interface, where you can view your conve
 
 ## Snippets
 
-![Screenshot 1](assets/screenshots/screenshot1.png)
-![Screenshot 2](assets/screenshots/screenshot2.png)
-![Screenshot 3](assets/screenshots/screenshot3.png)
-![Screenshot 4](assets/screenshots/screenshot4.png)
-![Screenshot 5](assets/screenshots/screenshot5.png)
-![Screenshot 6](assets/screenshots/screenshot6.png)
+<img src="assets/screenshots/screenshot1.png" alt="Screenshot 1" width="200">
+<img src="assets/screenshots/screenshot2.png" alt="Screenshot 2" width="200">
+<img src="assets/screenshots/screenshot3.png" alt="Screenshot 3" width="200">
+<br/>
+<img src="assets/screenshots/screenshot4.png" alt="Screenshot 4" width="200">
+<img src="assets/screenshots/screenshot5.png" alt="Screenshot 5" width="200">
+<img src="assets/screenshots/screenshot6.png" alt="Screenshot 6" width="200">
